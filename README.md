@@ -99,11 +99,11 @@ The **LibreChat Admin Panel** is a specialized management interface designed for
    ```bash
    ssh -L 2025:localhost:2025 VPSUsername@VPSIPAddress
    ```
-   > Access browser:
+   > Open in a browser:
    ```bash
    http://localhost:2025/
    ```
-   >> There's no need to do this if you allow the admin dashboard to be accessed over the internet by using `app.listen(2025, '0.0.0.0', () => console.log('Dashboard running on port 2025'));`. Simply access `VPSIPAddress:2025`.
+   >> There's no need to do this if you allow the admin dashboard to be accessed over the internet by using `app.listen(2025, '0.0.0.0', () => console.log('Dashboard running on port 2025'));`. Simply open in a browser: `VPSIPAddress:2025`.
 ---
 Whenever Docker is restarted, the `DockerLocalIP` changes so make sure to run this command if no user data is displayed on the Admin Dashboard:
 ```bash
