@@ -16,7 +16,7 @@
 ---
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/JBayudang/LibreChat-Admin-Dashboard)
+[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](https://github.com/JBayudang/LibreChat-Admin-Dashboard)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/JBayudang/LibreChat-Admin-Dashboard/graphs/commit-activity)
 
 </div>
@@ -39,7 +39,7 @@ The **LibreChat Admin Panel** is a specialized management interface designed for
 
 ## 📸 Screenshot
 <div align="center">
-  <img src="https://lh3.googleusercontent.com/pw/AP1GczNn9r78ux44GeYLIIIS4wcp5tEhquM6NXWsIKXoCM24eu4o381ElgQ9neu9NkLviy5F2b03azc6lvlKvuejRrNqxree0ifMj9sKlN-84rtVh4VAZ8C5GqCRNJ90A-QyCCmSQJrCqZdhxohqGTBc1GA=w919-h794-s-no-gm?authuser=0" alt="Admin Dashboard" width="800">
+  <img src="https://lh3.googleusercontent.com/pw/AP1GczPQgF-Cqrf3fEYtA25CbbJKBTnl8ACKTLry28pHn7U6zL7gXPfinfLTghJ2c8mlQl6QTHTSsCtO-qMWxQOC4Pq21xXEJHYOFsAHA1xPOSfAZl7UCdCSKa3-1fcxCTr5d-eoM_WgSUw-4w27ZpTLP_w=w742-h723-s-no-gm" alt="Admin Dashboard" width="800">
   <p><em>The main dashboard provides a high-level overview of your AI ecosystem.</em></p>
 </div>
 
