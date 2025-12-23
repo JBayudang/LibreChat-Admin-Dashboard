@@ -10,13 +10,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(session({
-    secret: 'librechat-admin-dashboard',
+    secret: 'soul-calibre-admin-secret',
     resave: false,
     saveUninitialized: true,
     cookie: { maxAge: 24 * 60 * 60 * 1000 }
 }));
 
-mongoose.connect('mongodb://DockerLocalIP:27017/LibreChat')
+mongoose.connect('mongodb://172.18.0.4:27017/LibreChat')
   .then(() => console.log('Connected to LibreChat DB'))
   .catch(err => console.error('DB Connection Error:', err));
 
@@ -56,6 +56,19 @@ app.get('/', checkAuth, (req, res) => {
 
 app.use('/api', checkAuth);
 app.use(express.static('public'));
+
+app.post('/api/banner', (req, res) => {
+    const { from, to, msg, isPublic, isPersistable } = req.body;
+    const cmd = `docker exec LibreChat npm run update-banner "${from}" "${to}" "${msg}" "${isPublic}" "${isPersistable}"`;
+    
+    exec(cmd, (error, stdout, stderr) => {
+        if (error) {
+            console.error(`Banner Exec Error: ${error.message}`);
+            return res.status(500).send("Error updating banner");
+        }
+        res.send("Banner updated successfully!");
+    });
+});
 
 app.get('/api/stats', async (req, res) => {
     try {
@@ -112,7 +125,7 @@ app.delete('/api/users/:email', (req, res) => {
     mongoose.connection.db.collection('users').deleteOne({ email: email })
         .then(result => {
             if (result.deletedCount === 0) return res.status(404).send("User not found.");
-            exec(`/usr/bin/docker exec LibreChat npm run delete-user ${email} -y`, () => {
+            exec(`docker exec LibreChat npm run delete-user ${email} -y`, () => {
                 res.send("Deleted");
             });
         }).catch(err => res.status(500).send("DB Error"));
